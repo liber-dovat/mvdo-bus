@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <link rel="stylesheet" href="css/webViz.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="leaflet/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body,
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        Parametros del servicio / visualizador
+                        <button id="butCollapse" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#collapse1">+</button>
+                    </h4>
+                    <br>
+<!--                     <label id="lblSubsistema">Visualizando subsistema </label>
+ -->                    <label id="lblEmpresa">Visualizando datos de empresa </label>
+                    <label id="lblCantBuses"></label>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label>Subsistema:</label>
+                                <select id="subsistema" name="subsistema" class="form-control">
+										<option value="-1">Todos</option>
+										<option value="1">Montevideo</option>
+										<option value="2">Canelones</option>
+										<option value="3">San Jose</option>
+										<option value="4">Metropolitano</option>
+									</select>
+                            </div>
+                            <div class="form-group">
+                                <label>Empresa:</label>
+                                <select id="empresas" name="empresas" class="form-control">
+										<option value="-1">Todas</option>
+										<option value="20">COME</option>
+										<option value="50">CUTCSA</option>
+										<option value="70">UCOT</option>
+										<option value="10">COETC</option>
+										<option value="13">EMPRESA CASANOVA LIMITADA</option>
+										<option value="18">COPSA</option>
+										<option value="20">COMESA</option>
+										<option value="29">CITA</option>
+										<option value="32">SAN ANTONIO TRANSPORTE Y TURISMO</option>
+										<option value="33">C.O. DEL ESTE</option>
+										<option value="35">TALA-PANDO-MONTEVIDEO</option>
+										<option value="36">SOLFY SA</option>
+										<option value="37">TURIL SA</option>
+										<option value="39">ZEBALLOS HERMANOS</option>
+										<option value="41">RUTAS DEL NORTE</option>
+										<option value="80">COIT</option>
+									</select>
+                            </div>
+                            <div class="form-group">
+                                <label>Lineas:</label>
+                                <input id="linea" type="text" name="linea" placeholder="si se ingresa variante no se toma en cuenta" class="form-control" />
+                            </div>
+
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label>Tiempo de refresco (7 a 10 segs.):</label>
+                                <input id="refresh" type="number" value="7" min="7" max="10" step="1" onkeydown="return false" class="form-control" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script type="text/javascript" src="leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="leaflet/leaflet-realtime.min.js"></script>
+    <script type="text/javascript" src="leaflet/leaflet.awesome-markers.js"></script>
+    <script type="text/javascript" src="bootstrap/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/constants.js?v=1.0.1"></script>
+    <script type="text/javascript" src="js/mapaBuses.js?v=1.0.1"></script>
+</body>
+
+</html>
